@@ -256,6 +256,21 @@ with col2:
                 prediction = current_model.predict(input_data)[0]
                 try: probs = current_model.predict_proba(input_data)[0]
                 except: probs = np.zeros(10); probs[prediction] = 1.0
+                    
+            elif selected_model_name == 'Support Vector Machine':
+                input_data = img_scaled.reshape(1, 784)
+                prediction = current_model.predict(input_data)[0]
+                try: 
+                    probs = current_model.predict_proba(input_data)[0]
+                except: 
+                    # Agar SVM probability=True ke sath train nahi hua to
+                    probs = np.zeros(10)
+                    probs[prediction] = 1.0
+
+            elif selected_model_name == 'Random Forest':
+                input_data = img_scaled.reshape(1, 784)
+                prediction = current_model.predict(input_data)[0]
+                probs = current_model.predict_proba(input_data)[0]  
                 
             elif "ANN" in selected_model_name:
                 if selected_model_name == 'ANN v3 (Best - 100 Neurons)':
@@ -309,6 +324,7 @@ with col2:
         else:
 
             st.info("Waiting for drawing...")
+
 
 
 
