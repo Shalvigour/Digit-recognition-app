@@ -62,21 +62,19 @@ st.markdown("""
 
     /* 4. Main Title */
     .main-title {
-        font-size: 3.5rem;
-        color: #1E88E5;
-        text-align: center;
-        font-family: 'Helvetica Neue', sans-serif;
-        font-weight: 800;
-        margin-bottom: 0px;
-        letter-spacing: -1px;
+        font-size: 3.5rem !important; /* Size forcefully badha diya */
+        color: #1E88E5 !important;
+        text-align: center !important;
+        font-weight: 800 !important;
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Thoda shadow taaki pop kare */
     }
-    
     .sub-text {
         text-align: center;
-        color: #666;
+        color: #757575;
         font-size: 1.2rem;
         margin-bottom: 40px;
-        font-weight: 300;
     }
 
     /* 5. Card Styling */
@@ -191,8 +189,9 @@ with st.sidebar:
 
 # --- 7. Main Layout ---
 
-st.markdown('<p class="main-title">🔢 AI Digit Recognizer</p>', unsafe_allow_html=True)
-st.markdown('<p class="sub-text">Handwritten Digit Recognition using Deep Learning & Computer Vision</p>', unsafe_allow_html=True)
+st.markdown('<h1 class="main-title">🧠 AI Digit Recognizer</h1>', unsafe_allow_html=True)
+
+st.markdown('<p class="sub-text">Handwritten Digit Recognition using Deep Learning</p>', unsafe_allow_html=True)
 
 col1, col2 = st.columns([1, 1], gap="large")
 
@@ -287,4 +286,5 @@ with col2:
                 st.altair_chart(bar_chart, use_container_width=True)
                 
         else:
+
             st.info("Waiting for drawing...")
