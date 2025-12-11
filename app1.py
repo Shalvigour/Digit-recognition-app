@@ -203,7 +203,7 @@ st.markdown("""
         <p style="
             font-size: 1.2rem; 
             color: #000000; 
-            margin-top:-10px; 
+            margin-top:-20px; 
             font-weight: 350;">
             Handwritten Digit Recognition using Deep Learning
         </p>
@@ -307,6 +307,7 @@ with col2:
         else:
 
             st.info("Waiting for drawing...")
+
 
 
 
