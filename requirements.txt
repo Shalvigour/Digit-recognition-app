@@ -1,0 +1,8 @@
+streamlit
+numpy
+pandas
+opencv-python-headless
+tensorflow
+joblib
+streamlit-drawable-canvas
+altair
