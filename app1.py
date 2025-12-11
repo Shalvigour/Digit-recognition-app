@@ -23,9 +23,9 @@ st.markdown("""
     header {visibility: hidden;}
     footer {visibility: hidden;}
     
-    /* 2. PAGE SPACING (Updated to move everything UP) */
+    /* 2. PAGE SPACING - FORCING IT UP */
     .block-container {
-        padding-top: 2rem !important; /* Pehle 5rem tha, ab kam kar diya */
+        padding-top: 1rem !important; /* Bohot upar shift kar dega */
         padding-bottom: 2rem !important;
     }
     
@@ -190,9 +190,30 @@ with st.sidebar:
 
 # --- 7. Main Layout ---
 
-st.markdown('<h1 class="main-title">🧠 AI Digit Recognizer</h1>', unsafe_allow_html=True)
+# --- 7. Main Layout ---
 
-st.markdown('<p class="sub-text">Handwritten Digit Recognition using Deep Learning</p>', unsafe_allow_html=True)
+# Combine Title & Subtitle in one block to kill the gap
+st.markdown("""
+    <div style="text-align: center; margin-top: 0px;">
+        <h1 style="
+            font-size: 3.5rem; 
+            color: #1E88E5; 
+            margin-bottom: 0px; 
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">
+            🧠 AI Digit Recognizer
+        </h1>
+        <p style="
+            font-size: 1.2rem; 
+            color: #757575; 
+            margin-top: 5px; 
+            font-weight: 300;">
+            Handwritten Digit Recognition using Deep Learning
+        </p>
+    </div>
+""", unsafe_allow_html=True)
+
+# ... (rest of your columns code remains the same)
 
 col1, col2 = st.columns([1, 1], gap="large")
 
@@ -289,4 +310,5 @@ with col2:
         else:
 
             st.info("Waiting for drawing...")
+
 
