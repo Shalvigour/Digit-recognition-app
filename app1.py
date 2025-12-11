@@ -19,36 +19,34 @@ st.set_page_config(
 # --- 2. Professional CSS Styling (HEADER REMOVAL ADDED) ---
 st.markdown("""
 <style>
-    /* 1. HIDE STREAMLIT DEFAULT HEADER & FOOTER */
+    /* 1. HIDE DEFAULT HEADER & FOOTER */
     header {visibility: hidden;}
     footer {visibility: hidden;}
     
-    /* 2. Adjust Top Padding to fill the gap */
+    /* 2. PAGE SPACING (Updated to move everything UP) */
     .block-container {
-        padding-top: 2rem !important;
+        padding-top: 2rem !important; /* Pehle 5rem tha, ab kam kar diya */
         padding-bottom: 2rem !important;
     }
     
-    /* 3. Floating Name Badge (Top Right) - Adjusted Z-Index */
+    /* 3. STYLISH BADGE (Top Right) */
     .floating-badge {
         position: fixed;
         top: 20px;
-        right: 25px;
-        background-color: white;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(8px);
         padding: 8px 15px;
-        border-radius: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        border: 1px solid #e0e0e0;
-        font-family: 'Arial', sans-serif;
-        font-size: 14px;
-        color: #333;
-        z-index: 99999; /* Super high so nothing hides it */
+        border-radius: 30px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        border: 1px solid #e3f2fd;
+        z-index: 99999;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
     }
     .badge-icon {
-        background-color: #1E88E5; /* Matched with Blue Theme */
+        background: #1E88E5;
         color: white;
         border-radius: 50%;
         width: 24px;
@@ -60,65 +58,68 @@ st.markdown("""
         font-size: 12px;
     }
 
-    /* 4. Main Title */
+    /* 4. TITLE STYLING (Fixed Gap & Position) */
     .main-title {
-        font-size: 3.5rem !important; /* Size forcefully badha diya */
+        font-size: 3.5rem !important;
         color: #1E88E5 !important;
         text-align: center !important;
         font-weight: 800 !important;
-        margin-top: 20px !important;
-        margin-bottom: 10px !important;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1); /* Thoda shadow taaki pop kare */
+        margin-top: 10px !important;  /* Upar se thoda sa gap */
+        margin-bottom: -15px !important; /* NEGATIVE MARGIN: Neeche wali line ko kheench kar paas layega */
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
+    
     .sub-text {
         text-align: center;
         color: #757575;
-        font-size: 1.2rem;
-        margin-bottom: 40px;
+        font-size: 1.1rem;
+        margin-top: 10px !important; /* Thoda gap title ke baad */
+        margin-bottom: 30px !important;
     }
 
-    /* 5. Card Styling */
-    .card-container {
-        background-color: #ffffff;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        border: 1px solid #f0f0f0;
-        margin-bottom: 20px;
+    /* ... Baaki CSS same rahega ... */
+    
+    /* 5. CARD HEADER STYLING */
+    .header-card {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 15px;
+        border-radius: 10px 10px 0 0;
+        border: 1px solid #ddd;
+        border-bottom: none;
         text-align: center;
     }
-    
-    /* 6. Sidebar Accuracy Box */
-    .metric-box {
-        background-color: #e8f5e9;
-        border-left: 6px solid #43a047;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-    }
-    
-    .metric-value {
-        font-size: 2.2rem;
-        font-weight: 800;
-        color: #1b5e20;
+    .header-card h3 {
         margin: 0;
+        color: #333;
+        font-size: 1.5rem;
     }
     
-    .metric-label {
-        font-size: 0.9rem;
-        color: #555;
-        margin: 0;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+    .canvas-container {
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+        padding: 20px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     }
-
-    /* 7. Prediction Result Big Text */
+    
     .prediction-box {
         background-color: #f1f8e9;
-        border: 2px solid #c5e1a5;
+        border: 2px solid #a5d6a7;
         border-radius: 12px;
         padding: 20px;
         text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .metric-box {
+        background-color: #e3f2fd;
+        border-left: 5px solid #1E88E5;
+        padding: 15px;
+        border-radius: 5px;
         margin-bottom: 20px;
     }
 </style>
@@ -288,3 +289,4 @@ with col2:
         else:
 
             st.info("Waiting for drawing...")
+
