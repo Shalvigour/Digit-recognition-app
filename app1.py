@@ -190,8 +190,6 @@ with st.sidebar:
 
 # --- 7. Main Layout ---
 
-# --- 7. Main Layout ---
-
 # Combine Title & Subtitle in one block to kill the gap
 st.markdown("""
     <div style="text-align: center; margin-top: 0px;">
@@ -206,7 +204,7 @@ st.markdown("""
             font-size: 1.2rem; 
             color: #000000; 
             margin-top:-10px; 
-            font-weight: 300;">
+            font-weight: 350;">
             Handwritten Digit Recognition using Deep Learning
         </p>
     </div>
@@ -309,6 +307,7 @@ with col2:
         else:
 
             st.info("Waiting for drawing...")
+
 
 
 
